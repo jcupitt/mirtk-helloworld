@@ -10,8 +10,8 @@ find_package(MIRTK REQUIRED
 	Registration)
 
 project(flip)
-include_directories("${MIRTK_INCLUDE_DIRS}")
 add_executable(flip flip.cc)
-target_link_libraries(flip Mirtk::Common)
+include_directories("${MIRTK_INCLUDE_DIRS}")
+target_link_libraries(flip mirtk::LibCommon)
 
 install(TARGETS flip DESTINATION bin)

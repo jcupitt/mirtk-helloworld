@@ -16,8 +16,9 @@ export PATH="$MIRTK_ROOT/bin:$PATH"
 export LD_LIBRARY_PATH="$MIRTK_ROOT/lib:$LD_LIBRARY_PATH"
 ```
 
-Install VTK 8.1. Ubuntu 17.10 bundles VTK 6, which is too old for 
-current MIRTK.
+Install the [latest VTK](https://www.vtk.org/download/#latest). Ubuntu
+17.10 packages VTK 6, which is too old for current MIRTK. You'll need to
+install various other things from the Ubuntu package repository, such as TBB.
 
 ```
 $ cd VTK-8.1.0
@@ -28,7 +29,9 @@ $ make -j 8
 $ make install
 ```
 
-Clone MIRTK from github. It uses submodules, which you must also init.
+Clone [MIRTK from github](https://github.com/BioMedIA/MIRTK). It uses
+submodules, which you must also init. Again, various other packages from
+Ubuntu are necessary.
 
 ```
 $ cd MIRTK

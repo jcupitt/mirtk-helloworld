@@ -1,17 +1,21 @@
 cmake_minimum_required(VERSION 3.9)
+project(flip)
 
-# my mirtk seems to be missing PointSet ... strange
+find_package(VTK)
+
 find_package(MIRTK REQUIRED
+	PointSet
 	Common 
 	Numerics 
 	IO 
 	Image 
 	Transformation 
-	Registration)
+	Registration
+	)
 
-project(flip)
+include(MIRTKTargets)
+
 add_executable(flip flip.cc)
-include_directories("${MIRTK_INCLUDE_DIRS}")
-target_link_libraries(flip mirtk::LibCommon)
-
+target_include_directories(flip PUBLIC "${MIRTK_INCLUDE_DIRS}")
+target_link_libraries(flip mirtk::LibCommon mirtk::LibPointSet)
 install(TARGETS flip DESTINATION bin)

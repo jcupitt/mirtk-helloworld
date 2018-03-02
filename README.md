@@ -44,13 +44,18 @@ $ make -j 8
 $ make install
 ```
 
-Then try this thing:
+Then build this with:
 
 ```
 $ mkdir build
 $ cd build
-$ cmake -D CMAKE_MODULE_PATH:PATH="$MIRTK_ROOT/share/cmake;$MIRTK_ROOT/lib/cmake/mirtk" -D CMAKE_INSTALL_PREFIX:PATH=$MIRTK_ROOT ..
+$ cmake -D CMAKE_MODULE_PATH:PATH=$MIRTK_ROOT/lib/cmake/mirtk ..
 $ make
 $ make install
 ```
 
+And run with:
+
+```
+$ ./flip
+```
